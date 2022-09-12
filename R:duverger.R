@@ -17,7 +17,7 @@ ggplot(cg01, aes(x=enep)) + geom_histogram() + facet_grid(vars(eneg))
 ggplot(cg01, aes(x=enep)) + geom_density() + facet_grid(vars(electoral_system)) 
 #Isolate Upper Tier
 ut<- subset(cg01, upper_tier >1)
-#ggplot for upper tier and eneg
-ggplot(cg01, aes(x=enep, fill=social_heterogeneity)) + geom_density(alpha=1) + facet_wrap(vars(electoral_system)) + theme_bw() + labs(x="Effective Number of Electoral Parties", y="Density of Each Electoral System", fill="Social Heterogeneity", title="A Density Plot of Effective Number of Parties Based on Electoral Laws and Social Heterogeneity", Subtitle="A Robust Relationship")
+#final ggplot
+ggplot(cg01, aes(x=enep, fill=social_heterogeneity)) + geom_density(alpha=1) + facet_wrap(vars(electoral_system)) + theme_bw() + labs(x="Effective Number of Electoral Parties", y="Density of Each Electoral System", fill="Social Heterogeneity", title="A Density Plot of Effective Number of Parties Based on Electoral Laws and Heterogeneity", Subtitle="A Robust Relationship")
 #Save
-ggsave("doc-figs/electoral-parties-heterogeneity-systems.pdf", height=5, width=8)
+ggsave("doc-figs/electoral-parties-socialheterogeneity-systems.pdf", height=5, width=8)
